@@ -1,33 +1,31 @@
-import { useState,useEffect } from "react"
+import {useState,useEffect} from 'react'
+
 const Gul = () => {
 
-  const[rate,setRate]=useState(0);
+  const [rate,setRate]=useState(0);
   const [amount,setAmount]=useState(1);
 
   useEffect(()=>{
-    fetch("https://api.exchangerate-api.com/v4/latest/USD").then(res=>res.json()).then(data=>{setRate(data.rates.INR)})
+    fetch("https://api.exchangerate-api.com/v4/latest/USD").then(res=>res.json()).then(data=>
+      {setRate(data.rates.INR)})
+     
 
   },[])
+
   return (
-    <div className='bg-gray-500 w-screen h-screen'>
+    <div>
+      USD to INR
       <div>
-        {rate? (
+        {rate?(
           <div>
-          <h1>Currency convertor INR to USD</h1>
-          <input className="border border-black" type='number' value={amount}
-          onChange={(e)=>
-            setAmount(e.target.value)
+          <input type='Number' value={amount} placeholder='enter USD' onChange={(e)=>setAmount(e.target.value)}></input>
 
-          }></input>
-
-          <p>{(amount*rate).toFixed(2)}  INR</p>
+          <p>{(amount*rate).toFixed(2)} INR</p>
           </div>
         ):(
-          <p>Response Processing</p>
-
+          <p>Response Loading</p>
         )}
-        
-      </div>
+      </div>      
     </div>
   )
 }
