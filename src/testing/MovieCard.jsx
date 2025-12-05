@@ -1,10 +1,11 @@
 import {useState} from 'react'
 
 
+
 const MovieCard = () => {
 
   const[movies,setMovies]=useState([])
-  const [user,setUser]=useState('')
+  const [user,setUser]=useState('');
 
   const handleClick=async()=>{
 
@@ -15,9 +16,12 @@ const MovieCard = () => {
 
   }
   return (
-    <div>
+    <div className='w-screen h-screen bg-gray-400'>
+      <p className='text-[30px] font-bold bg-linear-to-r/longer from-indigo-500 to-teal-400 text-'>
+        Search Movie
+      </p>
       <input className='bg-white px-2 py-2' type="text" value={user} onChange={(e)=>setUser(e.target.value)}></input>
-      <button className='bg-orange-400 rounded py-1 px-3 ' onClick={handleClick}>Search</button>
+      <button kclassName='bg-orange-400 rounded py-1 px-3 ' onClick={handleClick}>Search</button>
 
      
          

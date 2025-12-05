@@ -1,11 +1,11 @@
 
-import MovieCard from "./testing/MovieCard"
+import Refund from './testing/Refund'
 
 
 const App = () => {
   return (
-     <div className="flex justify-center bg-gray-400 items-center h-screen ">
-      <MovieCard/>
+     <div className='bg-black flex flex-cols h-screen w-screen justify-center items-center '>
+      <Refund/>
     </div>
   )
 }
