@@ -22,11 +22,11 @@ const MovieCard = () => {
      
          
         {movies.map((movie, index) => (
-          <div key={index} className="bg-gray-200 p-2 rounded shadow">
+          <div key={index} className="bg-gray-200 p-2 rounded shadow grid grid-cols-4">
             <img
               src={movie.Poster}
               alt="movie"
-              className='w-full h-40 object-cover rounded'
+              className=' flex flex-row rounded'
             />
             <h2 className='font-bold mt-2'>{movie.Title}</h2>
           </div>
