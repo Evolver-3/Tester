@@ -1,10 +1,11 @@
 
-import Poke from "./testing/Poke"
+import MovieCard from "./testing/MovieCard"
+
 
 const App = () => {
   return (
-    <div>
-      <Poke/>
+     <div className="flex justify-center items-center h-screen ">
+      <MovieCard/>
     </div>
   )
 }
